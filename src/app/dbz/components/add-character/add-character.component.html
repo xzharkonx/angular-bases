@@ -1,0 +1,17 @@
+<h4> Agregar personaje</h4>
+
+    <form action="" class="row" (ngSubmit)="emitCharacter()">
+      <!-- [] para asociar un atributo a algún valor o o atrbuto que tengamos de typescript -->
+      <!-- () para asociar un evento del nodo en cuestion con algún método de nuestro typescript -->
+      <!-- [()] "La caja de babanas" sirve para asociar un evento y un atributo al mismo tiempo. Y esto
+      es el two data binding en especifico. -->
+      <input class="form-control mb-2" [(ngModel)]="character.name" type="text" name="nombre" id="nombre" placeholder="Nombre">
+
+      <input class="form-control mb-2" [(ngModel)]="character.power"  type="number" name="power" id="power" placeholder="Poder">
+
+      <!-- Por lo que al dar click podremos llamar una función para tomar el valor del objeto que le hemos colocado -->
+      <button type="submit" class="btn btn-primary">Agregar</button>
+
+      <!-- Ahora al modificarlo el valor del objeto character se modificara con lo que le pongamos. -->
+      <pre>{{character | json}}</pre>
+    </form>

@@ -1,0 +1,31 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+    <!-- Recuerda que las propiedades se representan con [] y los
+    eventos con (). -->
+
+    <!-- En esta parte le indicamos que propiedad [] [propiedadHija]
+    va a sobreescribirse por la del padre "propiedadPadre"
+    [propiedadHija]="propiedadPadre" -->
+    <dbz-list [characterList]="characters" (onDelete) = "onDeleteCharacter($event)"></dbz-list>
+  </div>
+
+  <div class="col">
+    <!-- Aquí escucharemos el evento () en el cual tiene la propiedad de
+    onNewCharacter y este componente emitira un nuevo personaje,
+    entonces es como si hubieramos creado un evento
+    para emitr el valor que emitiremos que se representará como $event de tipo character.
+    Y a lo que es igual a "onNewCharacter()" es una función de nuestro main-page.component
+    que se ejecutará para enviarle la información emitida.
+    -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+
+  <!-- Si nosotros incluimos la data como un servicio entonces ahora nuestro servicio contendrá todas las variables
+  y métodos que le hemos colocado y como si fuera un Objeto podemos llamarlos desde aquí para mejorar la
+  estructura de información y poder inyectarla de forma Singleton. -->
+
+</div>
